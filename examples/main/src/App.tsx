@@ -9,6 +9,20 @@ import { Screen } from './utils/types';
 import { useWllama, WllamaProvider } from './utils/wllama.context';
 import './utils/benchmark';
 
+import { init } from '@plausible-analytics/tracker'
+
+// disable if localstorage, disablePlausible is set to true
+if (!localStorage.getItem('disablePlausible')) {
+  init({
+    domain: 'ou0.cc',
+    endpoint: 'https://plausible.canine.tools/api/event',
+    captureOnLocalhost: false,
+    outboundLinks: true,
+  });
+} else {
+  console.log('Plausible statistics disabled');
+}
+
 function App() {
   return (
     <MessagesProvider>

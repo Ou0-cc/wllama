@@ -64,5 +64,8 @@
     "semi": true,
     "singleQuote": true,
     "bracketSameLine": false
+  },
+  "dependencies": {
+    "@plausible-analytics/tracker": "^0.4.4"
   }
 }
