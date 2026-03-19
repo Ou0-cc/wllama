@@ -11,17 +11,12 @@ import './utils/benchmark';
 
 import { init } from '@plausible-analytics/tracker'
 
-// disable if localstorage, disablePlausible is set to true
-if (!localStorage.getItem('disablePlausible')) {
-  init({
-    domain: 'ou0.cc',
-    endpoint: 'https://plausible.canine.tools/api/event',
-    captureOnLocalhost: false,
-    outboundLinks: true,
-  });
-} else {
-  console.log('Plausible statistics disabled');
-}
+init({
+  domain: 'ou0.cc',
+  endpoint: 'https://plausible.canine.tools/api/event',
+  captureOnLocalhost: false,
+  outboundLinks: true,
+});
 
 function App() {
   return (
